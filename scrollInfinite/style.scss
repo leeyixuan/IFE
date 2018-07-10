@@ -44,11 +44,96 @@ ul{
   }
 }
 
-.showmore{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  font-size: 20px;
-  background-color: #f7f7f8;
+/*加载动画*/
+.box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  //控制该属性显示隐藏loadding动画
+  display: none;
 }
+
+.loader {
+  width: 30%;
+  height: 100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  position: relative;
+}
+
+.loading li {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #333333;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.loading li:nth-child(1) {
+  top: 15px;
+  left: 0px;
+  -webkit-animation: loading .7s ease 0s infinite;
+}
+
+.loading li:nth-child(2) {
+  top: 10.6px;
+  left: 10.6px;
+  -webkit-animation: loading .7s ease .1s infinite;
+}
+
+.loading li:nth-child(3) {
+  top: 0px;
+  left: 15px;
+  -webkit-animation: loading .7s ease .2s infinite;
+}
+
+.loading li:nth-child(4) {
+  top: -10.6px;
+  left: 10.6px;
+  -webkit-animation: loading .7s ease .3s infinite;
+}
+
+.loading li:nth-child(5) {
+  top: -15px;
+  left: 0px;
+  -webkit-animation: loading .7s ease .4s infinite;
+}
+
+.loading li:nth-child(6) {
+  top: -10.6px;
+  left: -10.6px;
+  -webkit-animation: loading .7s ease .5s infinite;
+}
+
+.loading li:nth-child(7) {
+  top: 0px;
+  left: -15px;
+  -webkit-animation: loading .7s ease .6s infinite;
+}
+
+.loading li:nth-child(8) {
+  top: 10.6px;
+  left: -10.6px;
+  -webkit-animation: loading .7s ease .7s infinite;
+}
+
+@-webkit-keyframes loading {
+  50%{
+    -webkit-transform: scale(0.4);
+    opacity: 0.5;
+    filter: 0.5;
+  }
+  100%{
+    -webkit-transform: scale(1);
+    opacity: 1;
+    filter: 1;
+  }
+}
+

@@ -3,6 +3,7 @@
 (function () {
 
     var list = document.querySelector('#list');
+    var ani = document.getElementsByClassName('box')[0];//loadding动画
     const num = 30; //每次向后端获取数据的数量
     var current = 0; //下次获取数据的起始序号，序号从0开始
 
@@ -24,9 +25,11 @@
 
                 current += num;
                 isAddItem=false;
+                ani.style.display = 'none';
             }).catch(function (err) {
                 console.log(err);
             });
+
         }
     }
 
@@ -40,6 +43,7 @@
                 }
                 resolve(data);
             }, 1000);
+            ani.style.display = 'block';
         });
     }
 
@@ -55,7 +59,7 @@
 
             var bottom = totalHeight-scrollTop-clientHeight;
             //已解决重复渲染问题
-            if (bottom < 100) {
+            if (bottom < 150) {
                 render();
             }
         });
